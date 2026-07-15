@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Epicentra Health Research (EHR)</title>
+<meta name="description" content="Get in touch with Epicentra Health Research (EHR) to start a free introductory consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="alternate" hreflang="en" href="https://www.epicentrahealth.com/contact.html">
+<link rel="alternate" hreflang="sv" href="https://www.epicentrahealth.com/sv/contact.html">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Epicentra Health Research home">
+      <span class="brand-mark">E</span>
+      <span class="brand-text">EHR<span class="brand-sub">Epicentra Health Research</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="about.html">About &amp; Portfolio</a>
+      <a class="nav-cta" href="contact.html">Book a consultation</a>
+      <div class="lang-switch" aria-label="Language switch">
+        <a class="lang-link active" href="contact.html">EN</a>
+        <a class="lang-link" href="sv/contact.html">SV</a>
+      </div>
+    </nav>
+    <button class="nav-burger" aria-label="Toggle menu" onclick="document.getElementById('navMobile').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a class="nav-mobile-link" href="index.html">Home</a>
+    <a class="nav-mobile-link" href="services.html">Services</a>
+    <a class="nav-mobile-link" href="about.html">About &amp; Portfolio</a>
+    <a class="nav-mobile-link cta" href="contact.html">Book a consultation</a>
+    <div class="nav-mobile-lang">
+      <span>Language</span>
+      <a class="active" href="contact.html">EN</a>
+      <a href="sv/contact.html">SV</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero contact-hero">
+  <p class="eyebrow">Get in touch</p>
+  <h1>Start with a free introductory call.</h1>
+  <p class="lede">Tell us a little about your project — dataset, timeline, and what you're trying to learn from it — and Benti will follow up to schedule a short call.</p>
+
+  <div class="contact-grid">
+    <form class="contact-form" id="contactForm">
+      <label>Name
+        <input type="text" name="name" required placeholder="Your name">
+      </label>
+      <label>Email
+        <input type="email" name="email" required placeholder="you@organisation.org">
+      </label>
+      <label>Organisation (optional)
+        <input type="text" name="org" placeholder="University, NGO, municipality…">
+      </label>
+      <label>What do you need help with?
+        <textarea name="message" rows="4" required placeholder="e.g. GBTM analysis for a longitudinal youth survey"></textarea>
+      </label>
+      <button class="btn btn-clay" type="submit">Request a call</button>
+      <p class="form-note" id="formNote">Submitting opens your email client with these details pre-filled, addressed to bentigeleta@gmail.com. To collect submissions automatically, connect this form to a service such as Formspree.</p>
+    </form>
+
+    <div class="contact-side info-card">
+      <h3>Direct contact</h3>
+      <p class="mono">bentigeleta@gmail.com</p>
+      <p class="mono">+46 76 316 7579</p>
+      <p>Västerås, Sweden — services offered nationally and internationally.</p>
+      <h3 class="mt">Response time</h3>
+      <p>Typically within 1–2 business days. Flexible scheduling is available across time zones for international clients.</p>
+    </div>
+  </div>
+
+  <a class="btn btn-ghost back" href="index.html">← Back to home</a>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="brand footer-brand">
+        <span class="brand-mark">E</span>
+        <span class="brand-text">EHR<span class="brand-sub">Epicentra Health Research</span></span>
+      </div>
+      <p class="footer-note">A one-person consultancy founded by Benti Geleta Buli (PhD) — public health research, statistical modeling, and academic guidance grounded in 20+ years across Africa and Sweden.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About &amp; Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Based in</h4>
+      <p class="footer-note">Västerås, Sweden<br>Services offered nationally &amp; internationally</p>
+      <p class="footer-note mono">bentigeleta@gmail.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 EHR — Epicentra Health Research. Private firm, Sweden.</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var f = e.target;
+  var subject = encodeURIComponent('EHR inquiry from ' + f.name.value);
+  var body = encodeURIComponent(
+    'Name: ' + f.name.value + '\n' +
+    'Email: ' + f.email.value + '\n' +
+    'Organisation: ' + (f.org.value || '—') + '\n\n' +
+    'Message:\n' + f.message.value
+  );
+  window.location.href = 'mailto:bentigeleta@gmail.com?subject=' + subject + '&body=' + body;
+});
+</script>
+
+</body>
+</html>
